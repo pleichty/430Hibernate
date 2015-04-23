@@ -23,11 +23,11 @@
 	</property>
 	
 	<property name="address">
-		<column name="ADDRESS" length="16" not-null="true" />
+		<column name="ADDRESS" length="16" not-null="false" />
 	</property>
 	
 	<property name="year">
-		<column name="YEAR" length="16" not-null="true" />
+		<column name="YEAR" length="16" not-null="false" />
 		<type name="org.hibernate.type.EnumType">
         <param name="enumClass">hibernateDemo.Classification</param>
         <param name="useNamed">true</param>
@@ -35,7 +35,7 @@
 	</property>
 	
 	<property name="email">
-		<column name="EMAIL" length="16" not-null="true" />
+		<column name="EMAIL" length="16" not-null="false" />
 	</property>
 	
 </class>
