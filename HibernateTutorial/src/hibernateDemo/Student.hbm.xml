@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="hibernateDemo.Student" table="Student">
+
+	<id name="id" column="ID">
+		<generator class="native" />
+	</id>
+
+	<set name="courseList" table="Course" lazy="true" fetch="select" cascade="all">
+		<key>
+			<column name="ID" not-null="true" />
+		</key>
+		<one-to-many class="hibernateDemo.Course"   />
+	</set>
+	
+	<property name="name">
+		<column name="NAME" length="16" not-null="true" />
+	</property>
+	
+	<property name="address">
+		<column name="ADDRESS" length="16" not-null="true" />
+	</property>
+	
+	<property name="year">
+		<column name="YEAR" length="16" not-null="true" />
+		<type name="org.hibernate.type.EnumType">
+        <param name="enumClass">hibernateDemo.Classification</param>
+        <param name="useNamed">true</param>
+        </type>
+	</property>
+	
+	<property name="email">
+		<column name="EMAIL" length="16" not-null="true" />
+	</property>
+	
+</class>
+</hibernate-mapping>
+

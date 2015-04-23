@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="hibernateDemo.Course" table="Course">
+
+	<id name="id" column="ID">
+		<generator class="native" />
+	</id>
+	<property name="courseID">
+		<column name="COURSEID" length="16" not-null="true" />
+	</property>
+	<property name="name">
+		<column name="NAME" length="16" not-null="true" />
+	</property>
+<!-- 	<many-to-one name="student" class="hibernateDemo.Student"> -->
+<!-- 		<column name="ID" not-null="true"></column> -->
+<!-- 	</many-to-one> -->
+	
+</class>
+</hibernate-mapping>
+
